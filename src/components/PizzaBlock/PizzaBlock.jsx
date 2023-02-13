@@ -1,23 +1,31 @@
 import React, { useState } from "react";
 import pizzaArray from "./../../data/data";
-const PizzaBlock = ({ title, imgUrl, price, sizes }) => {
+const PizzaBlock = ({ title, imgUrl, price, sizes, types }) => {
   const [pizzaCount, setPizzaCount] = useState(0);
   const changeBtnCounter = () => {
     setPizzaCount(pizzaCount + 1);
   };
+  const typeNames = ["тонкое", "традиционное"];
+
+  const [activeType, setActiveType] = useState(0);
+
+  const [activeSize, setActiveSize] = useState(0);
+
   return (
     <div class="pizza-block">
       <img class="pizza-block__image" src={imgUrl} alt="Pizza" />
       <h4 class="pizza-block__title">{title}</h4>
       <div class="pizza-block__selector">
         <ul>
-          <li class="active">тонкое</li>
-          <li>традиционное</li>
+          {types.map((type, index) => {
+            return <li key={index} onClick={()=>{setActiveType(index)}} className={activeType === index ? 'active' : ''}>{typeNames[type]}</li>
+          })}
         </ul>
         <ul>
-          <li class="active">27 см.</li>
-          <li>30 см.</li>
-          <li>40 см.</li>
+          {sizes.map((size, index) => {
+            return <li key={index} onClick={()=>{setActiveSize(index)}} className={activeSize === index ? 'active' : ''}>{size}</li>
+
+          })}
         </ul>
       </div>
       <div class="pizza-block__bottom">

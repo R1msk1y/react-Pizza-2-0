@@ -4,6 +4,7 @@ import PizzaBlock from "./components/PizzaBlock/PizzaBlock";
 import Sort from "./components/Sort/Sort";
 import "./scss/app.scss";
 import pizzaArray from "./data/data";
+import CategoriesTry1 from "./components/Categories/CategoriesTry1";
 
 function App() {
   return (
@@ -13,13 +14,22 @@ function App() {
         <div class="content">
           <div class="container">
             <div class="content__top">
-              <Categories />
+              {/* <Categories /> */}
+              <CategoriesTry1/>
               <Sort />
             </div>
             <h2 class="content__title">Все пиццы</h2>
             <div class="content__items">
               {pizzaArray.map((obj) => {
-                return <PizzaBlock title={obj.title} imgUrl={obj.imageUrl} price={obj.price}  />;
+                return (
+                  <PizzaBlock key={obj.id}
+                    title={obj.title}
+                    imgUrl={obj.imageUrl}
+                    price={obj.price}
+                    sizes={obj.sizes}
+                    types={obj.types}
+                  />
+                );
               })}
             </div>
           </div>
