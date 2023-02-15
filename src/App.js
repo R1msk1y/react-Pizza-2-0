@@ -1,5 +1,6 @@
+import { Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
-
+import { BrowserRouter, Routers, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 
@@ -12,7 +13,11 @@ function App() {
         <Header />
         <div class="content">
           <div class="container">
-            <NotFound />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/not-found" element={<NotFound />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
           </div>
         </div>
       </div>

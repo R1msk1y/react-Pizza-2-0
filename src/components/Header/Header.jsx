@@ -1,15 +1,18 @@
+import { Link } from "react-router-dom";
 import headerLogo from "./../../img/icons/pizza-logo.svg";
 const Header = () => {
   return (
     <div class="header">
       <div class="container">
-        <div class="header__logo">
-          <img width="38" src={headerLogo} alt="Pizza logo" />
-          <div>
-            <h1>React Pizza</h1>
-            <p>самая вкусная пицца во вселенной</p>
+        <Link to="/">
+          <div class="header__logo">
+            <img width="38" src={headerLogo} alt="Pizza logo" />
+            <div>
+              <h1>React Pizza</h1>
+              <p>самая вкусная пицца во вселенной</p>
+            </div>
           </div>
-        </div>
+        </Link>
         <div class="header__cart">
           <a href="/cart.html" class="button button--cart">
             <span>520 ₽</span>
