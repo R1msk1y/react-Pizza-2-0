@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import pizzaArray from "./../../data/data";
-const PizzaBlock = ({ title, imgUrl, price, sizes, types }) => {
+const PizzaBlock = ({ title, imageUrl, price, sizes, types }) => {
   const [pizzaCount, setPizzaCount] = useState(0);
   const changeBtnCounter = () => {
     setPizzaCount(pizzaCount + 1);
@@ -13,7 +13,8 @@ const PizzaBlock = ({ title, imgUrl, price, sizes, types }) => {
 
   return (
     <div class="pizza-block">
-      <img class="pizza-block__image" src={imgUrl} alt="Pizza" />
+      <img class="pizza-block__image" src={imageUrl} alt="Pizza" />
+      {console.log(title)}
       <h4 class="pizza-block__title">{title}</h4>
       <div class="pizza-block__selector">
         <ul>

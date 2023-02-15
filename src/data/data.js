@@ -108,7 +108,7 @@ const pizzaArray = [
     price: 285,
     category: 5,
     rating: 7,
-  },
-];
+  }
+]
 
 export default pizzaArray;
